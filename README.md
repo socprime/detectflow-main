@@ -51,6 +51,8 @@ In terms of calculating required resources, the following components of DetectFl
 ## Deployment
 Deployment should be performed by a person with expertise in Kubernetes and admin access to the Kubernetes Cluster provided for this project.
 
+Configuration files for K8S can be found in this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) 
+
 Deployment consists of two parts:
 
 1. Apache Flink (according to its official deployment recommendations)
