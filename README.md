@@ -39,7 +39,7 @@ Learn more at **[socprime.com](https://socprime.com/)**
 
 ## System Architecture
 
-![System Architecture](static/image/system_architecture_2.png)
+![System Architecture](static/image/system_architecture_3_dark.png)
 
 DetectFlow consists of the following projects, each in a separate repo:
 - [DetectFlow Backend](https://github.com/socprime/detectflow-backend)
