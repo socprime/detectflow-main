@@ -1,25 +1,44 @@
 # SOC Prime DetectFlow OSS
 
-Real-Time threat detection at the stream layer (Apache Kafka + Apache Flink). Detect threats in-flight – before logs hit SIEM:
-- Solution that runs detection logic on event streaming
-- Tags/enriches events in real time
-- Routes only what matters downstream
-- Applies thousands of Sigma rules on streaming events
+Detection intelligence turbocharged with AI. Enable line-speed detection of cyberattacks by equipping your team with AI, trained on 11 years of Detection Intelligence. 
+
+Elevate your daily work from SIEM min-maxing to Detection Orchestration across Data Pipelines, AIDR, EDR, Data Lake, and SIEM.
+
+![DetectFlow](static/image/DetectFlow.gif)
+
+- Sub-second MTTD: 0.005–0.01 seconds vs 15+ min for SIEM
+- Tags and enriches events in-flight, before SIEM ingestion
+- Scales with your infrastructure without vendor-imposed caps
+- Applies tens of thousands of Sigma rules on streaming events
 - No changes required to SIEM; works with existing ingestion architecture
 - Designed for air-gapped and cloud-connected deployment constraints (data stays in your control)
 
-## Features
+**Result: 10x rule capacity on existing infrastructure.**
+
+## Features in the Current Release
 - **Real-time Dashboard** - Live visualization of pipeline performance and metrics
 - **Pipeline Management** - Create, configure, and monitor Flink-based ETL pipelines
 - **Log Source Configuration** - Define parsing scripts and field mappings for event transformation
-- **Rule Management** - Manage Sigma detection rules from cloud (SOC Prime Platform or SigmaHQ GitHub repository) and local repositories
+- **Rule Management** - Manage Sigma rules from cloud (SOC Prime Platform or SigmaHQ GitHub repository) and local repositories
 - **Filter Configuration** - Create pre-filters to reduce false positives
 - **Topic Synchronization** - Discover and manage Kafka topics
 - **Hot-Reload Support** - Update rules, filters, and parsers without pipeline restart
 
+## Features in Progress
+- **Integration with SIEMs, EDRs, and Data Lakes**
+    - Splunk
+    - Microsoft Sentinel
+    - Elasticsearch
+    - OpenSearch
+- **Integration with LLM Firewall AIDR Bastion** 
+- **Detection rules staging**
+- **AI-powered data schema validation and remapping**
+
 ## System Architecture
 
 ![System Architecture](static/image/system_architecture.png)
+
+DetectFlow runs on Kafka streams using your hardware. 4 CPUs + 8GB RAM = 6,000+ rules processed simultaneously.
 
 DetectFlow consists of the following projects, each in a separate repo:
 - [DetectFlow Backend](https://github.com/socprime/detectflow-backend)
@@ -33,7 +52,7 @@ Consult each project for more details.
 - Apache Kafka 3.8+ (https://kafka.apache.org/)
 - Kubernetes 1.28+ (https://kubernetes.io/)
 - PostgreSQL 14+ (https://www.postgresql.org/)
-- Apache Flink 1.13+ (can be deployed together with DetectFlow)
+- Apache Flink 1.13+ (can be deployed together with DetectFlow) (https://flink.apache.org/)
 
 ### Network and infrastructure:
 - Internal access to deployed resources
