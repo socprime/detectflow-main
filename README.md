@@ -105,7 +105,7 @@ Run the following command to create a NameSpace:
 Out: namespace/flink created
 ```
 
-Open the `flink-configmap.yaml` from the installation package and specify values for the following parameters:
+Open the `flink-configmap.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) and specify values for the following parameters:
 
 - `namespace: flink`
 
@@ -121,7 +121,7 @@ Out: configmap/flink-config created
 
 5. Deploy Secrets for Flink Sigma Detector.
 
-Open the `flink-secret.yaml` from the installation package and specify the Base64 values for the following parameters (if needed, either leave by default):
+Open the `flink-secret.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) and specify the Base64 values for the following parameters (if needed, either leave by default):
 
 - `KAFKA_BOOTSTRAP_SERVERS:`
 - `KAFKA_AUTH_METHOD:`
@@ -137,7 +137,7 @@ Out: secret/flink-secret created
 
 6. Deploy PersistentVolumeClaims for Flink State Storage.
 
-Open the `flink-pvcs.yaml` from the installation package and specify values for the following parameters in each name: block:
+Open the `flink-pvcs.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) and specify values for the following parameters in each name: block:
 
 - `namespace:`
 - `storage:`
@@ -164,7 +164,7 @@ Optional for PVC, add a selector/label for nodes by running the following comman
 
 7. Deploy RBAC Configuration for Flink ServiceAccount. It grants Flink permission to create and manage TaskManager pods.
 
-Open the `flink-rbac.yaml` from the installation package and specify a value for the following parameter:
+Open the `flink-rbac.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) and specify a value for the following parameter:
 
 - `Namespace: flink`
 
@@ -184,7 +184,11 @@ rolebinding.rbac.authorization.k8s.io/grant-event-reader created
 
 ### Docker Images Pulling 
 
-Some of the images are stored at the Docker Hub Public Repo. Or you can build it locally.
+Build Docker images locally according to instructions from README.md for each project:
+
+- [DetectFlow Backend](https://github.com/socprime/detectflow-backend)
+- [DetectFlow UI](https://github.com/socprime/detectflow-ui)
+- [DetectFlow MatchNode](https://github.com/socprime/detectflow-matchnode)
 
 1. Upload the images to your container registry that is accessible from your Kubernetes cluster.
 
@@ -208,7 +212,7 @@ DetectFlow consists of two parts:
 #### DetectFlow Backend Deployment
 1. Deploy ConfigMap with static configuration for DetectFlow Backend.
 
-Open `admin-panel-be-configmap.yaml` from the installation package and specify a value for the following parameter:
+Open `admin-panel-be-configmap.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) and specify a value for the following parameter:
 
 - `KAFKA_BOOTSTRAP_SERVERS:`
 
@@ -224,7 +228,7 @@ Out: configmap/admin-panel-be-config created
 
 2. Deploy Secret with sensitive data configuration for DetectFlow Backend.
 
-Open `admin-panel-be-secret.yaml` from the installation package and specify a value for the following parameter:
+Open `admin-panel-be-secret.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) and specify a value for the following parameter:
 
 - `DATABASE_URL:`
 
@@ -238,7 +242,7 @@ Run the following command:
 Out: secret/admin-panel-be-secret created
 ```
 
-3. Deploy PersistentVolumeClaims for DetectFlow Backend using `admin-panel-be-pvc.yaml` from the installation package.
+3. Deploy PersistentVolumeClaims for DetectFlow Backend using `admin-panel-be-pvc.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
 Run the following command:
 
 ```
@@ -247,7 +251,7 @@ Run the following command:
 Out: persistentvolumeclaim/admin-panel-metrics-pvc created
 ```
 
-4. Create a Deployment resource for DetectFlow Backend using `admin-panel-be-deployment.yaml` from the installation package.
+4. Create a Deployment resource for DetectFlow Backend using `admin-panel-be-deployment.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
 
 Run the following command:
 
@@ -257,7 +261,7 @@ Run the following command:
 Out: deployment.apps/admin-panel-be created
 ```
 
-5. Deploy Network Service resource for DetectFlow Backend using `admin-panel-be-service.yaml` from the installation package.
+5. Deploy Network Service resource for DetectFlow Backend using `admin-panel-be-service.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
 
 Run the following command:
 
@@ -277,7 +281,7 @@ Out: service/admin-panel-be created
 
 1. Deploy ConfigMap with a static configuration for DetectFlow UI.
 
-Open `admin-panel-ui-configmap.yaml` from the installation package and specify a value for the following parameter:
+Open `admin-panel-ui-configmap.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) and specify a value for the following parameter:
 
 Note: `NAME.NAMESPACE.CLUSTER_DOMAIN_NAME` (default: `svc.cluster.local`)
 
@@ -293,7 +297,7 @@ Run the following command:
 Out: configmap/admin-panel-ui-config created
 ```
 
-2. Create a Deployment resource for DetectFlow UI using `admin-panel-ui-deployment.yaml` from the installation package.
+2. Create a Deployment resource for DetectFlow UI using `admin-panel-ui-deployment.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
 
 Run the following command:
 
@@ -303,7 +307,7 @@ Run the following command:
 Out: deployment.apps/admin-panel-ui created
 ```
 
-3. Deploy Network Service resource for DetectFlow UI using `admin-panel-ui-service.yaml` from the installation package.
+3. Deploy Network Service resource for DetectFlow UI using `admin-panel-ui-service.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
 Run the following command:
 
 ```
