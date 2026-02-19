@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-panel-ui
+  namespace: flink
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: admin-panel-ui
+      app.kubernetes.io/name: admin-panel-ui
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: admin-panel-ui
+        app.kubernetes.io/name: admin-panel-ui
+    spec:
+      containers:
+      - name: admin-panel-ui
+        image: CHANGE_ME_TO_LINK_TO_DOCKER_IMAGE_ADMIN_PANEL_UI
+        ports:
+        - name: http
+          containerPort: 4173
+          protocol: TCP
+        - name: liveness
+          containerPort: 4173
+          protocol: TCP
+        - name: readiness
+          containerPort: 4173
+          protocol: TCP
+        envFrom:
+        - configMapRef:
+            name: admin-panel-ui-config
+        resources: {}
+        lifecycle:
+          preStop:
+            exec:
+              command:
+              - sleep
+              - "5"
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600

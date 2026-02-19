@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: admin-panel-ui-config
+  namespace: flink
+data:
+  VITE_API_BASE_URL: http://admin-panel-be.flink.svc.cluster.local:8000/api/v1
+  VITE_API_PROXY_TARGET: http://admin-panel-be.flink.svc.cluster.local:8000
+  VITE_PREVIEW_ALLOWED_HOSTS: admin-panel-be.flink.svc.cluster.local
+  VITE_USE_MOCK_API: "false"
+  VITE_USE_MOCK_AUTH: "true"

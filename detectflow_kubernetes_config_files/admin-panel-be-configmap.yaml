@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: admin-panel-be-config
+  namespace: flink
+data:
+  # Kubernetes namespace for Flink deployments (optional, default: security)
+  KUBERNETES_NAMESPACE: "flink"
+
+  # Docker image for Flink pipelines (optional, default: flink-sigma-detector:latest)
+  FLINK_IMAGE: CHANGE_ME_TO_LINK_TO_DOCKER_IMAGE_FLINK_SIGMA_DETECTOR
+
+  # Image pull policy: Always, IfNotPresent, Never (optional, default: Always)
+  IMAGE_PULL_POLICY: "Always"
+
+  # Kafka topic for Sigma rules, compacted (optional, default: sigma-rules)
+  KAFKA_SIGMA_RULES_TOPIC: "sigma-rules"
+
+  # Kafka topic for per-rule metrics from Flink (optional, default: rule-statistics)
+  KAFKA_METRICS_TOPIC: "rule-statistics"
+
+  # Consumer group for metrics topic (optional, default: admin-panel-metrics)
+  KAFKA_METRICS_CONSUMER_GROUP: "admin-panel-dashboard"
+
+  # Kafka topic for activity/audit logs (optional, default: etl-activity)
+  KAFKA_ACTIVITY_TOPIC: "etl-activity"
+
+  # Consumer group for activity topic (optional, default: admin-panel-activity)
+  KAFKA_ACTIVITY_CONSUMER_GROUP: "admin-panel-activity"
+
+  # SSE broadcast interval for dashboard in seconds (optional, default: 2.0)
+  DASHBOARD_BROADCAST_INTERVAL_SECONDS: "2.0"
+
+  # Retention period for audit logs in days (optional, default: 30)
+  AUDIT_LOGS_RETENTION_DAYS: "7"
+
+  # TDM API for rule sync (optional, default: https://api.tdm.socprime.com)
+  TDM_API_BASE_URL: "https://api.tdm.socprime.com"
+
+  # TDM hostname (optional, default: tdm.socprime.com)
+  TDM_HOSTNAME: "tdm.socprime.com"
+
+  # Python logging level (optional, default: INFO)
+  LOG_LEVEL: "INFO"
+
+  # Points to the Certificate Authority (CA) file.
+  #KAFKA_SSL_CA_LOCATION: /certs/caroot.pem
+
+  # Points to the Certificate file.
+  #KAFKA_SSL_CERTIFICATE_LOCATION: /certs/cert.pem
+  
+  # Points to the Certificate Key file.
+  #KAFKA_SSL_KEY_LOCATION: /certs/key.pem
+
+  #Set to "false" to skip matching the server's IP/Hostname with the name on its certificate
+  #KAFKA_SSL_CHECK_HOSTNAME: "false"
+  

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-panel-be
+  namespace: flink
+spec:
+  type: ClusterIP
+  ports:
+    - name: app
+      protocol: TCP
+      port: 8000
+      targetPort: http
+  selector:
+    app.kubernetes.io/instance: admin-panel-be
+    app.kubernetes.io/name: admin-panel-be
+  sessionAffinity: None
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  internalTrafficPolicy: Cluster

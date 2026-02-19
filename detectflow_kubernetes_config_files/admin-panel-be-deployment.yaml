@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-panel-be
+  namespace: flink
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: admin-panel-be
+      app.kubernetes.io/name: admin-panel-be
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: admin-panel-be
+        app.kubernetes.io/name: admin-panel-be
+    spec:
+      volumes:
+        - name: pvc
+          persistentVolumeClaim:
+            claimName: admin-panel-metrics-pvc
+      containers:
+        - name: admin-panel-be
+          image: CHANGE_ME_TO_LINK_TO_DOCKER_IMAGE_ADMIN_PANEL_BE
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+            - name: liveness
+              containerPort: 8000
+              protocol: TCP
+            - name: readiness
+              containerPort: 8000
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: admin-panel-be-config
+            - secretRef:
+                name: admin-panel-be-secret
+          resources: {}
+          volumeMounts:
+            - name: pvc
+              mountPath: /mnt/metrics
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - sleep
+                  - "5"
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600

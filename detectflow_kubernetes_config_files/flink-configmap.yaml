@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flink-config
+  namespace: flink
+data:
+  # Kafka consumer starting offset for new pipelines (earliest/latest/committed)
+  KAFKA_STARTING_OFFSET: "latest"
+
+  # Python application logging
+  LOG_LEVEL: "INFO"
+  LOG_FORMAT: "console"
