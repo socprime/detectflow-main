@@ -2,7 +2,10 @@
 
 Detection intelligence turbocharged with AI. Enable line-speed detection of cyberattacks by equipping your team with AI, trained on 11 years of Detection Intelligence. 
 
-Elevate your daily work from SIEM min-maxing to Detection Orchestration across Data Pipelines, AIDR, EDR, Data Lake, and SIEM.
+Elevate your daily work from SIEM min-maxing to Detection Orchestration across Data Pipelines, AIDR, EDR, Data Lake, and SIEM. 
+
+Learn more at **[socprime.com](https://socprime.com/)**
+
 
 ![DetectFlow](static/image/DetectFlow.gif)
 
@@ -36,9 +39,7 @@ Elevate your daily work from SIEM min-maxing to Detection Orchestration across D
 
 ## System Architecture
 
-![System Architecture](static/image/system_architecture.png)
-
-DetectFlow runs on Kafka streams using your hardware. 4 CPUs + 8GB RAM = 6,000+ rules processed simultaneously.
+![System Architecture](static/image/system_architecture_2.png)
 
 DetectFlow consists of the following projects, each in a separate repo:
 - [DetectFlow Backend](https://github.com/socprime/detectflow-backend)
