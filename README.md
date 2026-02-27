@@ -46,6 +46,7 @@ DetectFlow consists of the following projects, each in a separate repo:
 - [DetectFlow UI](https://github.com/socprime/detectflow-ui)
 - [DetectFlow MatchNode](https://github.com/socprime/detectflow-matchnode)
 - [DetectFlow Schema Parser](https://github.com/socprime/detectflow-parser)
+- [DetectFlow One-click local deployment](https://github.com/socprime/detectflow-one-click-local-deployment)
 
 Consult each project for more details.
 ## Requirements
@@ -72,6 +73,8 @@ In terms of calculating required resources, the following components of DetectFl
 Deployment should be performed by a person with expertise in Kubernetes and admin access to the Kubernetes Cluster provided for this project.
 
 Configuration files for K8S can be found in this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) 
+
+ > **Note:** All configuration files in this repository contain placeholder data (mock secrets) and are intended for demonstration purposes only.
 
 Deployment consists of two parts:
 
