@@ -1,4 +1,14 @@
-# SOC Prime DetectFlow OSS
+<p align="center">
+  <a href="https://primedetect.live"><img src="static/image/Prime Detect_x2__1280px.png" alt="Prime Detect"></a>
+</p>
+
+<p align="center">
+  <a href="https://socprime.com/detectflow/#demo-form"><img src="static/image/Button Contact sales.png" alt="Contact sales" height="48"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://www.youtube.com/watch?v=FYI4y1YiW7c"><img src="static/image/Button Youtube.png" alt="Watch video" height="48"></a>
+</p>
+
+DetectFlow is being renamed to Prime Detect. The new name will be reflected across all resources and assets in the next release.
 
 Detection intelligence turbocharged with AI. Enable line-speed detection of cyberattacks by equipping your team with AI trained on 11 years of Detection Intelligence. 
 
@@ -7,7 +17,7 @@ Elevate your daily work from SIEM min-maxing to Detection Orchestration across D
 Learn more at **[socprime.com](https://socprime.com/)**
 
 
-![DetectFlow](static/image/DetectFlow.gif)
+![Prime Detect](static/image/DetectFlow.gif)
 
 - Sub-second MTTD: 0.005–0.01 seconds vs 15+ min for SIEM
 - Tags and enriches events in-flight, before SIEM ingestion
@@ -41,12 +51,12 @@ Learn more at **[socprime.com](https://socprime.com/)**
 
 ![System Architecture](static/image/system_architecture_3_dark.png)
 
-DetectFlow consists of the following projects, each in a separate repo:
-- [DetectFlow Backend](https://github.com/socprime/detectflow-backend)
-- [DetectFlow UI](https://github.com/socprime/detectflow-ui)
-- [DetectFlow MatchNode](https://github.com/socprime/detectflow-matchnode)
-- [DetectFlow Schema Parser](https://github.com/socprime/detectflow-parser)
-- [DetectFlow One-click local deployment](https://github.com/socprime/detectflow-one-click-local-deployment)
+Prime Detect consists of the following projects, each in a separate repo:
+- [Prime Detect Backend](https://github.com/socprime/detectflow-backend)
+- [Prime Detect UI](https://github.com/socprime/detectflow-ui)
+- [Prime Detect MatchNode](https://github.com/socprime/detectflow-matchnode)
+- [Prime Detect Schema Parser](https://github.com/socprime/detectflow-parser)
+- [Prime Detect One-click local deployment](https://github.com/socprime/detectflow-one-click-local-deployment)
 
 Consult each project for more details.
 ## Requirements
@@ -54,11 +64,11 @@ Consult each project for more details.
 - Apache Kafka 3.8+ (https://kafka.apache.org/)
 - Kubernetes 1.28+ (https://kubernetes.io/)
 - PostgreSQL 14+ (https://www.postgresql.org/)
-- Apache Flink 1.13+ (can be deployed together with DetectFlow) (https://flink.apache.org/)
+- Apache Flink 1.13+ (can be deployed together with Prime Detect) (https://flink.apache.org/)
  
 ### Network and infrastructure:
 
-DetectFlow supports two deployment paths, depending on the resources available.
+Prime Detect supports two deployment paths, depending on the resources available.
 
 #### Standard deployment: Kubernetes cluster
 - Internal access to deployed resources
@@ -69,7 +79,7 @@ DetectFlow supports two deployment paths, depending on the resources available.
    - to *.github.com for pulling open-source detections using GitHub Integration with public open source repositories, including SigmaHQ, Microsoft, Splunk, and Elastic (optional)
 
 #### Lightweight deployment: Minikube (local, single machine)
-For evaluation, testing, or environments where a full Kubernetes cluster isn't available, DetectFlow can also be deployed locally on a single machine using Minikube.
+For evaluation, testing, or environments where a full Kubernetes cluster isn't available, Prime Detect can also be deployed locally on a single machine using Minikube.
 
 Prerequisites:
  - macOS with Homebrew
@@ -80,19 +90,19 @@ Prerequisites:
    - to *.socprime.com for API access to the SOC Prime Platform for synchronizing detections (optional, API key needed)
    - to *.github.com for pulling open-source detections using GitHub Integration with public open-source repositories, including SigmaHQ, Microsoft, Splunk, and Elastic (optional)
 
-In terms of calculating required resources, the following components of DetectFlow should be considered, with individual requirements for each component summed up to estimate the total amount:
+In terms of calculating required resources, the following components of Prime Detect should be considered, with individual requirements for each component summed up to estimate the total amount:
 - **User Interface Node (Admin Panel)** is the control center to manage event matching processes. This component requires at least 2 CPUs and 4 GB RAM
 - **Task Manager Node**, the default component to control the operation of pipelines (based on match nodes, the Apache Flink technology). This component requires at least 1 CPU and 4 GB RAM
 - **Match Node**, a pipeline controlled via Admin Panel that matches detection rules to Apache Kafka topic events. The number of Match Nodes (pipelines) is custom, and you should estimate the required Kubernetes cluster resources based on the number of pipelines you're going to create. 
 
 ## Deployment
 There are two deployment options:
-- **Streamlined, "one-click" deployment** to set up the entire DetectFlow ecosystem locally using Docker and Kubernetes (Minikube). The only prerequisites for this option are macOS with Homebrew and Docker Desktop. You can find all the details of this approach in a separate repository [detectflow-one-click-local-deploymentv](https://github.com/socprime/detectflow-one-click-local-deployment).
+- **Streamlined, "one-click" deployment** to set up the entire Prime Detect ecosystem locally using Docker and Kubernetes (Minikube). The only prerequisites for this option are macOS with Homebrew and Docker Desktop. You can find all the details of this approach in a separate repository [detectflow-one-click-local-deploymentv](https://github.com/socprime/detectflow-one-click-local-deployment).
 - **Full deployment** with separate steps for core components that requires an existing instance of Kubernetes. To perform it, follow the instructions in [FULL_DEPLOYMENT.md](FULL_DEPLOYMENT.md).
 
 ## Getting Started
-To start using DetectFlow, follow the instructions from [GETTING_STARTED.md](GETTING_STARTED.md).
+To start using Prime Detect, follow the instructions from [GETTING_STARTED.md](GETTING_STARTED.md).
 
 ## License
-This SOC Prime DetectFlow software is made available under a dual licensing model: (i) European Union Public License, version 1.2 and (ii) SOC Prime Commercial License. Depending on your intended use, you must choose one of the two licenses. See the [LICENSE](LICENSE) file for details.
+This SOC Prime Prime Detect software is made available under a dual licensing model: (i) European Union Public License, version 1.2 and (ii) SOC Prime Commercial License. Depending on your intended use, you must choose one of the two licenses. See the [LICENSE](LICENSE) file for details.
 

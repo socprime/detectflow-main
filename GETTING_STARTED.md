@@ -1,7 +1,17 @@
-# Getting Started
-_For the general architecrute and other info about DetectFlow, see [README.md](README.md)._
+<p align="center">
+  <a href="https://primedetect.live"><img src="static/image/Prime Detect_x2__1280px.png" alt="Prime Detect"></a>
+</p>
 
-DetectFlow matches log events from Kafka topics with Sigma detection rules and tags each matched event with additional metadata related to the matched rules:
+<p align="center">
+  <a href="https://socprime.com/detectflow/#demo-form"><img src="static/image/Button Contact sales.png" alt="Contact sales" height="48"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://www.youtube.com/watch?v=FYI4y1YiW7c"><img src="static/image/Button Youtube.png" alt="Watch video" height="48"></a>
+</p>
+
+# Getting Started
+_For the general architecrute and other info about Prime Detect, see [README.md](README.md). DetectFlow is being renamed to Prime Detect. The new name will be reflected across all resources and assets in the next release._
+
+Prime Detect matches log events from Kafka topics with Sigma detection rules and tags each matched event with additional metadata related to the matched rules:
 - ID
 - Title
 - Severity
@@ -9,8 +19,8 @@ DetectFlow matches log events from Kafka topics with Sigma detection rules and t
 
 To get started:
 1. Ensure your Kafka instance has:
-    - Topics with log source events you want to match with detection rules (source topics for DetectFlow)
-    - Topics for tagged events that are consumed by a SIEM/EDR/Data Lake (destination topics for DetectFlow)
+    - Topics with log source events you want to match with detection rules (source topics for Prime Detect)
+    - Topics for tagged events that are consumed by a SIEM/EDR/Data Lake (destination topics for Prime Detect)
 2. Create repositories with detection rules in Sigma format:
     - Local repositories
     - Cloud repositories that are synchronized with the SOC Prime Platform (optional, API key required)

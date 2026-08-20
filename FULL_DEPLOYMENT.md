@@ -1,5 +1,15 @@
+<p align="center">
+  <a href="https://primedetect.live"><img src="static/image/Prime Detect_x2__1280px.png" alt="Prime Detect"></a>
+</p>
+
+<p align="center">
+  <a href="https://socprime.com/detectflow/#demo-form"><img src="static/image/Button Contact sales.png" alt="Contact sales" height="48"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://www.youtube.com/watch?v=FYI4y1YiW7c"><img src="static/image/Button Youtube.png" alt="Watch video" height="48"></a>
+</p>
+
 # Full Deployment
-_For the general architecrute and other info about DetectFlow, see [README.md](README.md)._
+_For the general architecture and other info about Prime Detect, see [README.md](README.md). DetectFlow is being renamed to Prime Detect. The new name will be reflected across all resources and assets in the next release._
 
 Deployment should be performed by a person with expertise in Kubernetes and admin access to the Kubernetes Cluster provided for this project.
 
@@ -10,7 +20,7 @@ Configuration files for K8S can be found in this [folder](https://github.com/soc
 Deployment consists of two parts:
 
 1. Apache Flink (according to its official deployment recommendations)
-2. DetectFlow itself
+2. Prime Detect itself
 
 Additionally, an Apache Kafka instance is required. If you don't have one, you can install it using the [Apache Kafka Quickstart](https://kafka.apache.org/quickstart/)
 
@@ -140,9 +150,9 @@ rolebinding.rbac.authorization.k8s.io/grant-event-reader created
 
 Build Docker images locally according to instructions from README.md for each project:
 
-- [DetectFlow Backend](https://github.com/socprime/detectflow-backend)
-- [DetectFlow UI](https://github.com/socprime/detectflow-ui)
-- [DetectFlow MatchNode](https://github.com/socprime/detectflow-matchnode)
+- [Prime Detect Backend](https://github.com/socprime/detectflow-backend)
+- [Prime Detect UI](https://github.com/socprime/detectflow-ui)
+- [Prime Detect MatchNode](https://github.com/socprime/detectflow-matchnode)
 
 1. Upload the images to your container registry that is accessible from your Kubernetes cluster.
 
@@ -159,12 +169,12 @@ Build Docker images locally according to instructions from README.md for each pr
 
 Note: these files will be applied in later steps.
 
-## DetectFlow Deployment
-DetectFlow consists of two parts:
-- DetectFlow backend
-- DetectFlow UI
-### DetectFlow Backend Deployment
-1. Deploy ConfigMap with static configuration for DetectFlow Backend.
+## Prime Detect Deployment
+Prime Detect consists of two parts:
+- Prime Detect backend
+- Prime Detect UI
+### Prime Detect Backend Deployment
+1. Deploy ConfigMap with static configuration for Prime Detect Backend.
 
 Open `admin-panel-be-configmap.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) and specify a value for the following parameter:
 
@@ -180,7 +190,7 @@ Run the following command:
 Out: configmap/admin-panel-be-config created
 ```
 
-2. Deploy Secret with sensitive data configuration for DetectFlow Backend.
+2. Deploy Secret with sensitive data configuration for Prime Detect Backend.
 
 Open `admin-panel-be-secret.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) and specify a value for the following parameter:
 
@@ -196,7 +206,7 @@ Run the following command:
 Out: secret/admin-panel-be-secret created
 ```
 
-3. Deploy PersistentVolumeClaims for DetectFlow Backend using `admin-panel-be-pvc.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
+3. Deploy PersistentVolumeClaims for Prime Detect Backend using `admin-panel-be-pvc.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
 Run the following command:
 
 ```
@@ -205,7 +215,7 @@ Run the following command:
 Out: persistentvolumeclaim/admin-panel-metrics-pvc created
 ```
 
-4. Create a Deployment resource for DetectFlow Backend using `admin-panel-be-deployment.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
+4. Create a Deployment resource for Prime Detect Backend using `admin-panel-be-deployment.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
 
 Run the following command:
 
@@ -215,7 +225,7 @@ Run the following command:
 Out: deployment.apps/admin-panel-be created
 ```
 
-5. Deploy Network Service resource for DetectFlow Backend using `admin-panel-be-service.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
+5. Deploy Network Service resource for Prime Detect Backend using `admin-panel-be-service.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
 
 Run the following command:
 
@@ -230,10 +240,10 @@ Out: service/admin-panel-be created
 `http://network_service_ip:8000`
 
 
-### DetectFlow UI Deployment
+### Prime Detect UI Deployment
 
 
-1. Deploy ConfigMap with a static configuration for DetectFlow UI.
+1. Deploy ConfigMap with a static configuration for Prime Detect UI.
 
 Open `admin-panel-ui-configmap.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files) and specify a value for the following parameter:
 
@@ -251,7 +261,7 @@ Run the following command:
 Out: configmap/admin-panel-ui-config created
 ```
 
-2. Create a Deployment resource for DetectFlow UI using `admin-panel-ui-deployment.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
+2. Create a Deployment resource for Prime Detect UI using `admin-panel-ui-deployment.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
 
 Run the following command:
 
@@ -261,7 +271,7 @@ Run the following command:
 Out: deployment.apps/admin-panel-ui created
 ```
 
-3. Deploy Network Service resource for DetectFlow UI using `admin-panel-ui-service.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
+3. Deploy Network Service resource for Prime Detect UI using `admin-panel-ui-service.yaml` from this [folder](https://github.com/socprime/detectflow-main/tree/main/detectflow_kubernetes_config_files).
 Run the following command:
 
 ```
