@@ -104,5 +104,5 @@ There are two deployment options:
 To start using Prime Detect, follow the instructions from [GETTING_STARTED.md](GETTING_STARTED.md).
 
 ## License
-This SOC Prime Prime Detect software is made available under a dual licensing model: (i) European Union Public License, version 1.2 and (ii) SOC Prime Commercial License. Depending on your intended use, you must choose one of the two licenses. See the [LICENSE](LICENSE) file for details.
+Apache License 2.0, see [LICENSE](LICENSE).
 
