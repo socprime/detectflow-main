@@ -28,25 +28,6 @@ Learn more at **[socprime.com](https://socprime.com/)**
 
 **Result: 10x rule capacity on existing infrastructure.**
 
-## Features in the Current Release
-- **Real-time Dashboard** - Live visualization of pipeline performance and metrics
-- **Pipeline Management** - Create, configure, and monitor Flink-based ETL pipelines
-- **Log Source Configuration** - Define parsing scripts and field mappings for event transformation
-- **Rule Management** - Manage Sigma rules from cloud (SOC Prime Platform or SigmaHQ GitHub repository) and local repositories
-- **Filter Configuration** - Create pre-filters to reduce false positives
-- **Topic Synchronization** - Discover and manage Kafka topics
-- **Hot-Reload Support** - Update rules, filters, and parsers without pipeline restart
-
-## Features in Progress
-- **Integration with SIEMs, EDRs, and Data Lakes**
-    - Splunk
-    - Microsoft Sentinel
-    - Elasticsearch
-    - OpenSearch
-- **Integration with LLM Firewall AIDR Bastion** 
-- **Detection rules staging**
-- **AI-powered data schema validation and remapping**
-
 ## System Architecture
 
 ![System Architecture](static/image/system_architecture_3_dark.png)
