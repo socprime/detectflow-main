@@ -17,7 +17,7 @@ Elevate your daily work from SIEM min-maxing to Detection Orchestration across D
 Learn more at **[socprime.com](https://socprime.com/)**
 
 
-![Prime Detect](static/image/DetectFlow.gif)
+![Prime Detect](static/image/DetectFlow_2.3.gif)
 
 - Sub-second MTTD: 0.005–0.01 seconds vs 15+ min for SIEM
 - Tags and enriches events in-flight, before SIEM ingestion
