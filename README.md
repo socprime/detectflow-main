@@ -28,25 +28,6 @@ Learn more at **[socprime.com](https://socprime.com/)**
 
 **Result: 10x rule capacity on existing infrastructure.**
 
-## Features in the Current Release
-- **Real-time Dashboard** - Live visualization of pipeline performance and metrics
-- **Pipeline Management** - Create, configure, and monitor Flink-based ETL pipelines
-- **Log Source Configuration** - Define parsing scripts and field mappings for event transformation
-- **Rule Management** - Manage Sigma rules from cloud (SOC Prime Platform or SigmaHQ GitHub repository) and local repositories
-- **Filter Configuration** - Create pre-filters to reduce false positives
-- **Topic Synchronization** - Discover and manage Kafka topics
-- **Hot-Reload Support** - Update rules, filters, and parsers without pipeline restart
-
-## Features in Progress
-- **Integration with SIEMs, EDRs, and Data Lakes**
-    - Splunk
-    - Microsoft Sentinel
-    - Elasticsearch
-    - OpenSearch
-- **Integration with LLM Firewall AIDR Bastion** 
-- **Detection rules staging**
-- **AI-powered data schema validation and remapping**
-
 ## System Architecture
 
 ![System Architecture](static/image/system_architecture_3_dark.png)
@@ -60,45 +41,30 @@ Prime Detect consists of the following projects, each in a separate repo:
 
 Consult each project for more details.
 ## Requirements
-### Technology stack:
+### Technology stack
 - Apache Kafka 3.8+ (https://kafka.apache.org/)
 - Kubernetes 1.28+ (https://kubernetes.io/)
 - PostgreSQL 14+ (https://www.postgresql.org/)
 - Apache Flink 1.13+ (can be deployed together with Prime Detect) (https://flink.apache.org/)
  
-### Network and infrastructure:
+### Network and infrastructure
 
-Prime Detect supports two deployment paths, depending on the resources available.
-
-#### Standard deployment: Kubernetes cluster
+- Outbound internet access allowed:
+  - To *.socprime.com for API access to the SOC Prime Platform for synchronizing detections
+  - To *.amazonaws.com and *.apache.org for pulling Docker images
+  - To *.hub.docker.com for pulling Docker images
+  - To *.github.com for pulling open-source detections
 - Internal access to deployed resources
 - Network connectivity between deployed resources
-- Kubernetes cluster with at least 3 nodes (workers) (min 8 vCPUs, 32 GiB RAM each).
-- Outbound internet access allowed:
-   - to *.socprime.com for API access to the SOC Prime Platform for synchronizing detections (optional, API key needed)
-   - to *.github.com for pulling open-source detections using GitHub Integration with public open source repositories, including SigmaHQ, Microsoft, Splunk, and Elastic (optional)
+- Kubernetes cluster with at least 3 worker nodes (min. 8 vCPUs and 32 GiB RAM each)
 
-#### Lightweight deployment: Minikube (local, single machine)
-For evaluation, testing, or environments where a full Kubernetes cluster isn't available, Prime Detect can also be deployed locally on a single machine using Minikube.
+### Delivery options
 
-Prerequisites:
- - macOS with Homebrew
- - Docker Desktop installed and running (8+ GB memory allocated in Docker Desktop → Settings → Resources)
- - At least 4 CPU cores available
- - At least 40 GB of disk space
- - Outbound internet access allowed:
-   - to *.socprime.com for API access to the SOC Prime Platform for synchronizing detections (optional, API key needed)
-   - to *.github.com for pulling open-source detections using GitHub Integration with public open-source repositories, including SigmaHQ, Microsoft, Splunk, and Elastic (optional)
-
-In terms of calculating required resources, the following components of Prime Detect should be considered, with individual requirements for each component summed up to estimate the total amount:
-- **User Interface Node (Admin Panel)** is the control center to manage event matching processes. This component requires at least 2 CPUs and 4 GB RAM
-- **Task Manager Node**, the default component to control the operation of pipelines (based on match nodes, the Apache Flink technology). This component requires at least 1 CPU and 4 GB RAM
-- **Match Node**, a pipeline controlled via Admin Panel that matches detection rules to Apache Kafka topic events. The number of Match Nodes (pipelines) is custom, and you should estimate the required Kubernetes cluster resources based on the number of pipelines you're going to create. 
+- An installation package (a set of YAML files) to be downloaded from an online resource
+- An installation package (a set of YAML files and Docker images) to be copied from a physical drive on-site
 
 ## Deployment
-There are two deployment options:
-- **Streamlined, "one-click" deployment** to set up the entire Prime Detect ecosystem locally using Docker and Kubernetes (Minikube). The only prerequisites for this option are macOS with Homebrew and Docker Desktop. You can find all the details of this approach in a separate repository [detectflow-one-click-local-deploymentv](https://github.com/socprime/detectflow-one-click-local-deployment).
-- **Full deployment** with separate steps for core components that requires an existing instance of Kubernetes. To perform it, follow the instructions in [FULL_DEPLOYMENT.md](FULL_DEPLOYMENT.md).
+To learn how to deploy Prime Detect, follow the instructions from [FULL_DEPLOYMENT.md](FULL_DEPLOYMENT.md).
 
 ## Getting Started
 To start using Prime Detect, follow the instructions from [GETTING_STARTED.md](GETTING_STARTED.md).
