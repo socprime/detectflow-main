@@ -28,25 +28,6 @@ Learn more at **[socprime.com](https://socprime.com/)**
 
 **Result: 10x rule capacity on existing infrastructure.**
 
-## Features in the Current Release
-- **Real-time Dashboard** - Live visualization of pipeline performance and metrics
-- **Pipeline Management** - Create, configure, and monitor Flink-based ETL pipelines
-- **Log Source Configuration** - Define parsing scripts and field mappings for event transformation
-- **Rule Management** - Manage Sigma rules from cloud (SOC Prime Platform or SigmaHQ GitHub repository) and local repositories
-- **Filter Configuration** - Create pre-filters to reduce false positives
-- **Topic Synchronization** - Discover and manage Kafka topics
-- **Hot-Reload Support** - Update rules, filters, and parsers without pipeline restart
-
-## Features in Progress
-- **Integration with SIEMs, EDRs, and Data Lakes**
-    - Splunk
-    - Microsoft Sentinel
-    - Elasticsearch
-    - OpenSearch
-- **Integration with LLM Firewall AIDR Bastion** 
-- **Detection rules staging**
-- **AI-powered data schema validation and remapping**
-
 ## System Architecture
 
 ![System Architecture](static/image/system_architecture_3_dark.png)
@@ -76,16 +57,16 @@ Prime Detect supports two deployment paths, depending on the resources available
 - Kubernetes cluster with at least 3 nodes (workers) (min 8 vCPUs, 32 GiB RAM each).
 - Outbound internet access allowed:
    - to *.socprime.com for API access to the SOC Prime Platform for synchronizing detections (optional, API key needed)
+   - to *.hub.docker.com for pulling Docker Images
    - to *.github.com for pulling open-source detections using GitHub Integration with public open source repositories, including SigmaHQ, Microsoft, Splunk, and Elastic (optional)
 
 #### Lightweight deployment: Minikube (local, single machine)
 For evaluation, testing, or environments where a full Kubernetes cluster isn't available, Prime Detect can also be deployed locally on a single machine using Minikube.
 
 Prerequisites:
- - macOS with Homebrew
- - Docker Desktop installed and running (8+ GB memory allocated in Docker Desktop → Settings → Resources)
- - At least 4 CPU cores available
- - At least 40 GB of disk space
+ - Ubuntu 22.04 / 24.04 / 26.04
+ - Docker Engine running, with your user in the docker group (the script installs Docker if missing)
+ - Tuned for a 32 CPU / 64 GB RAM / 128 GB SSD server (minimum ~8 CPU / 16 GB / 40 GB)
  - Outbound internet access allowed:
    - to *.socprime.com for API access to the SOC Prime Platform for synchronizing detections (optional, API key needed)
    - to *.github.com for pulling open-source detections using GitHub Integration with public open-source repositories, including SigmaHQ, Microsoft, Splunk, and Elastic (optional)
@@ -97,7 +78,7 @@ In terms of calculating required resources, the following components of Prime De
 
 ## Deployment
 There are two deployment options:
-- **Streamlined, "one-click" deployment** to set up the entire Prime Detect ecosystem locally using Docker and Kubernetes (Minikube). The only prerequisites for this option are macOS with Homebrew and Docker Desktop. You can find all the details of this approach in a separate repository [detectflow-one-click-local-deploymentv](https://github.com/socprime/detectflow-one-click-local-deployment).
+- **Streamlined, "one-click" deployment** to set up the entire Prime Detect ecosystem locally using Docker and Kubernetes (Minikube). The only prerequisite for this option is Ubuntu 24.04 or 26.04. You can find all the details of this approach in a separate repository [detectflow-one-click-local-deployment](https://github.com/socprime/detectflow-one-click-local-deployment).
 - **Full deployment** with separate steps for core components that requires an existing instance of Kubernetes. To perform it, follow the instructions in [FULL_DEPLOYMENT.md](FULL_DEPLOYMENT.md).
 
 ## Getting Started
