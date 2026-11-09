@@ -28,6 +28,18 @@ Learn more at **[socprime.com](https://socprime.com/)**
 
 **Result: 10x rule capacity on existing infrastructure.**
 
+## Real-Time Attack Chain Detection
+
+Prime Detect goes beyond single-event matching by correlating detections across multiple events into **Attack Chains**. Here's how an Attack Chain forms:
+
+- **Active Threats:** Active cyberattacks, such as php2shell or node2shell, each described by an Attack Flow, an ATT&CK-mapped sequence of techniques. Active Threats sync automatically from Prime Core (formerly Threat Detection Marketplace), and each includes its detections and a Higher Order Sigma rule.
+- **Higher Order Sigma rules:** Each rule is derived from an Active Threat's Attack Flow and describes a multi-event sequence on the same host within a time window. The pipeline evaluates events tagged by Sigma rules against these rules in real time.
+- **Attack Chains:** An Attack Chain forms when enough of the rule's sequence matches. Its match percentage shows how much of the Attack Flow has been observed. An Apache Flink agent then enriches the chain with context, reasons over the event sequence, and classifies it as a confirmed detection or a likely false positive.
+
+## Bundled Detection Content
+
+Prime Detect includes a free [detection content set](https://github.com/socprime/detectflow-backend/tree/main/content) covering the latest cyberattacks, built on 11 years of SOC Prime Detection Intelligence: Active Threats, their Higher Order Sigma rules, and the top-100 most effective behavior detection Sigma rules. The content is deployed automatically when you deploy Prime Detect.
+
 ## System Architecture
 
 ![System Architecture](static/image/system_architecture_3_dark.png)
@@ -37,6 +49,7 @@ Prime Detect consists of the following projects, each in a separate repo:
 - [Prime Detect UI](https://github.com/socprime/detectflow-ui)
 - [Prime Detect MatchNode](https://github.com/socprime/detectflow-matchnode)
 - [Prime Detect Schema Parser](https://github.com/socprime/detectflow-parser)
+- [Prime Detect Agent](https://github.com/socprime/detectflow-agent)
 - [Prime Detect One-click local deployment](https://github.com/socprime/detectflow-one-click-local-deployment)
 
 Consult each project for more details.
@@ -79,7 +92,7 @@ In terms of calculating required resources, the following components of Prime De
 ## Deployment
 There are two deployment options:
 - **Streamlined, "one-click" deployment** to set up the entire Prime Detect ecosystem locally using Docker and Kubernetes (Minikube). The only prerequisite for this option is Ubuntu 24.04 or 26.04. You can find all the details of this approach in a separate repository [detectflow-one-click-local-deployment](https://github.com/socprime/detectflow-one-click-local-deployment).
-- **Full deployment** with separate steps for core components that requires an existing instance of Kubernetes. To perform it, follow the instructions in [FULL_DEPLOYMENT.md](FULL_DEPLOYMENT.md).
+- **Helm chart deployment** to an existing Kubernetes cluster. The chart deploys the Prime Detect application layer: the Admin Panel backend, the Admin Panel UI, and the supporting resources for the Flink Sigma detector. All images are public on Docker Hub under `socprime/detectflow-oss`, so no registry login or pull secret is needed. For installation steps and configuration options, see [detectflow-helm](https://github.com/socprime/detectflow-helm).
 
 ## Getting Started
 To start using Prime Detect, follow the instructions from [GETTING_STARTED.md](GETTING_STARTED.md).
