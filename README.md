@@ -38,7 +38,7 @@ Prime Detect goes beyond single-event matching by correlating detections across 
 
 ## Bundled Detection Content
 
-Prime Detect includes a free [detection content set](https://github.com/socprime/detectflow-backend/tree/main/content) covering the latest cyberattacks, built on 11 years of SOC Prime Detection Intelligence: Active Threats, their Higher Order Sigma rules, and the top-100 most effective behavior detection Sigma rules. The content is deployed automatically when you deploy Prime Detect.
+Prime Detect includes a free [detection content set](https://github.com/socprime/detectflow-backend/tree/main/detection_content) covering the latest cyberattacks, built on 11 years of SOC Prime Detection Intelligence: Active Threats, their Higher Order Sigma rules, and the top-100 most effective behavior detection Sigma rules. The content is deployed automatically when you deploy Prime Detect.
 
 ## System Architecture
 
