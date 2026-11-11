@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://socprime.com/detectflow/#demo-form"><img src="static/image/Button Contact sales.png" alt="Contact sales" height="48"></a>
   &nbsp;&nbsp;&nbsp;
-  <a href="https://www.youtube.com/watch?v=FYI4y1YiW7c"><img src="static/image/Button Youtube.png" alt="Watch video" height="48"></a>
+  <a href="https://www.youtube.com/watch?v=FYI4y1YiW7c"><img src="static/image/Button Youtube1.png" alt="Watch video" height="48"></a>
 </p>
 
 DetectFlow is being renamed to Prime Detect. The new name will be reflected across all resources and assets in the next release.
