@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
+  <img align="left" src="static/image/spacer.png" alt="" height="48">
   <a href="#priority-support"><img src="static/image/Priority_Support.png" alt="Priority Support" height="48"></a>
-  &nbsp;&nbsp;&nbsp;
   <a href="https://www.youtube.com/watch?v=FYI4y1YiW7c"><img align="right" src="static/image/button_HOWTO_Videos.png" alt="HOWTO Videos" height="48"></a>
 </p>
 
