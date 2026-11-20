@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-  <a href="https://socprime.com/detectflow/#demo-form"><img src="static/image/Button Contact sales.png" alt="Contact sales" height="48"></a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://www.youtube.com/watch?v=FYI4y1YiW7c"><img src="static/image/Button Youtube1.png" alt="Watch video" height="48"></a>
+  <a href="#priority-support"><img src="static/image/Button Priority Support.png" alt="Priority Support" height="48"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://www.youtube.com/watch?v=FYI4y1YiW7c"><img src="static/image/Button Youtube1.png" alt="HOWTO Videos" height="48"></a>
 </p>
 
 DetectFlow is being renamed to Prime Detect. The new name will be reflected across all resources and assets in the next release.
@@ -96,6 +96,44 @@ There are two deployment options:
 
 ## Getting Started
 To start using Prime Detect, follow the instructions from [GETTING_STARTED.md](GETTING_STARTED.md).
+
+## Priority Support
+
+Running Prime Detect in production? Get a direct line to the SOC Prime engineers who build it, so a stalled pipeline or a broken parser doesn't leave your detections blind for days.
+
+**What's included**
+
+- **Private Slack channel and email** with the Prime Detect engineering team, instead of the public GitHub Issues queue
+- **Response within [4 business hours]** on production issues, with root-cause analysis and workarounds (CET, Mon–Fri)
+- **Sizing and architecture guidance**: Kafka partitioning, Flink parallelism, Kubernetes resources
+- **Performance tuning** as your event volume and rule count grow
+- **Detection onboarding help**: Sigma rules, log source parsers and field mapping
+- **Upgrade guidance** between releases, including the move from DetectFlow to Prime Detect
+- **Priority on the feature requests** you raise
+
+**$2,000/month**, billed monthly, cancel anytime.
+
+[![Get Priority Support](static/image/Button_Priority_Support_stripe.png)](https://billing.socprime.com/b/9B66oGgZqfpkc12gFfaR21d)
+
+Need hands-on deployment, custom correlation rules, or team training? [Contact sales](https://socprime.com/detectflow/#demo-form).
+
+|                          | Community                 | Priority Support                     |
+|--------------------------|---------------------------|--------------------------------------|
+| Channel                  | GitHub Issues             | Private Slack and email              |
+| Who answers              | Community and maintainers | Prime Detect core engineers          |
+| Response time            | Best effort               | [4 business hours] (CET, Mon–Fri)    |
+| Sizing and tuning        | Documentation             | Guidance for your environment        |
+| Sigma rules and parsers  | Documentation             | Guided onboarding of your log sources |
+| Upgrades                 | Release notes             | Guided upgrade plan                  |
+| Feature requests         | Public backlog            | Prioritized                          |
+| Price                    | Free                      | $2,000/month                         |
+| Covers                   | Open-source edition       | Open-source edition (commercial licenses sold separately) |
+
+**What's not included**
+
+- Priority Support covers the **open-source edition** of Prime Detect, as published in this repository under the Apache License 2.0. Customized or forked builds are out of scope.
+- **Commercial licenses are separate.** Enterprise licensing for Prime Detect, and any commercial licenses or vendor support for third-party components such as Kafka distributions (e.g. Confluent), Flink or Kubernetes platforms, are not part of this subscription. [Contact sales](https://socprime.com/detectflow/#demo-form) for enterprise licensing.
+- Your own infrastructure (Kafka, Flink and Kubernetes clusters) remains yours to operate. We advise on how Prime Detect runs on it, but we don't administer it.
 
 ## License
 Apache License 2.0, see [LICENSE](LICENSE).
