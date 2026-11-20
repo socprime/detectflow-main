@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://primedetect.live"><img src="static/image/Prime Detect_x2__1280px.png" alt="Prime Detect"></a>
+  <a href="https://primedetect.live"><img src="static/image/banner__Prime Detect.png" alt="Prime Detect"></a>
 </p>
 
 <p align="center">
-  <a href="#priority-support"><img src="static/image/Button Priority Support.png" alt="Priority Support" height="48"></a>
+  <a href="#priority-support"><img src="static/image/Priority_Support.png" alt="Priority Support" height="48"></a>
   &nbsp;&nbsp;&nbsp;
   <a href="https://www.youtube.com/watch?v=FYI4y1YiW7c"><img src="static/image/Button Youtube1.png" alt="HOWTO Videos" height="48"></a>
 </p>
@@ -113,7 +113,9 @@ Running Prime Detect in production? Get a direct line to the SOC Prime engineers
 
 **$2,000/month**, billed monthly, cancel anytime.
 
-[![Get Priority Support](static/image/Button_Priority_Support_stripe.png)](https://billing.socprime.com/b/9B66oGgZqfpkc12gFfaR21d)
+<p align="center">
+  <a href="https://billing.socprime.com/b/9B66oGgZqfpkc12gFfaR21d"><img src="static/image/Get_priority_support.png" alt="Get Priority Support"></a>
+</p>
 
 Need hands-on deployment, custom correlation rules, or team training? [Contact sales](https://socprime.com/detectflow/#demo-form).
 
