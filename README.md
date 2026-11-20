@@ -5,7 +5,7 @@
 <p align="center">
   <a href="#priority-support"><img src="static/image/Priority_Support.png" alt="Priority Support" height="48"></a>
   &nbsp;&nbsp;&nbsp;
-  <a href="https://www.youtube.com/watch?v=FYI4y1YiW7c"><img src="static/image/Button Youtube1.png" alt="HOWTO Videos" height="48"></a>
+  <a href="https://www.youtube.com/watch?v=FYI4y1YiW7c"><img align="right" src="static/image/button_HOWTO_Videos.png" alt="HOWTO Videos" height="48"></a>
 </p>
 
 DetectFlow is being renamed to Prime Detect. The new name will be reflected across all resources and assets in the next release.
